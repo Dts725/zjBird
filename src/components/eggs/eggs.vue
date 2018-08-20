@@ -169,7 +169,7 @@ export default {
 
       this.getBirdeggList();
 
-      console.log(this.date);
+
     },
 
     //获取工友会员等级
@@ -286,15 +286,11 @@ export default {
 
           if (this.noLists.length) {
             if (obj.month === this.noLists[this.noLists.length - 1].month) {
-              console.log("美金拉力");
-              console.log(this.noLists[this.noLists.length - 1].arr);
-              console.log(res.result.eggPaymentResponse);
+
 
               this.noLists[this.noLists.length - 1].arr = this.noLists[
                 this.noLists.length - 1
               ].arr.concat(res.result.eggPaymentResponse);
-              console.log(this.noLists);
-              console.log("美金拉力");
             } else {
               this.noLists.push(obj);
             }

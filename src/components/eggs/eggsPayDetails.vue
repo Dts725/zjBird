@@ -32,7 +32,9 @@ export default {
     name: "eggsPayDetails",
     data() {
         return {
-            money : -88888888888,
+            userId : 0,//用户Id
+            userType : 0,//用户类型
+            money : 0,
             title_info: {
                 title: "鸟蛋收入详情",
                 actionRight: {
@@ -46,12 +48,18 @@ export default {
         };
     },
     created() {
-        this.getInit(); 
+        this.getInit();
         let hander = setInterval(() => {
             if (!window.WebViewJavascriptBridge) {
                 return;
             } else {
                 clearInterval(hander);
+                 core.$app("get_user_info", "info").then(res => {
+                   let data = JSON.parse(res);
+            
+                   this.userId = data.user_id;
+                   this.userType = 0;
+                 });
                 core
                     .$app("title_info_control", this.title_info)
                     .then(function(res) {});
@@ -63,7 +71,8 @@ export default {
 
         getInit () {
             let data = {
-                bpDetailid : this.$route.params.bpDetailId
+                bpDetailid : this.$route.params.bpDetailId,
+                userId : this.userId
             }
             api.getBirdeggDetails(data).then(res => {
                 this.details = res.result;

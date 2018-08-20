@@ -20,7 +20,7 @@ import {
 } from 'mint-ui';
 
 
-// import * as VConsole from 'vconsole'
+import * as VConsole from 'vconsole'
 import 'vue2-animate/dist/vue2-animate.min.css';
 
 // import image from './components/image'

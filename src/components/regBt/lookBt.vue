@@ -136,7 +136,7 @@
         return store;
       },
       methods:method,
-      mounted(){
+      created(){
       store.whiteDatsName =this.$store.state.AO_WHITE_TEXT.AO_WHITE_BAR_DATA;
 
         store.vm = this;

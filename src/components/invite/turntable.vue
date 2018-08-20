@@ -102,37 +102,37 @@ export default {
                 {
                     // icon: require("../../assets/images/img/bean_500.png"),
                     count: 10,
-                    name: "36.66",
+                    name: "38.88",
                     isPrize: 1
                 },
                 {
                     // icon: require("../../assets/images/img/point_ten.png"),
                     count: 10,
-                    name: "16.66",
+                    name: "5.88",
                     isPrize: 1
                 },
                 {
                     // icon: require("../../assets/images/img/point_five.png"),
                     count: 5,
-                    name: "88.88",
+                    name: "8.88",
                     isPrize: 1
                 },
                 {
                     // icon: require("../../assets/images/img/bean_one.png"),
                     count: 10,
-                    name: "66.66",
+                    name: "58.88",
                     isPrize: 1
                 },
                 {
                     // icon: require("../../assets/images/img/bean_500.png"), // 奖品图片
                     count: 10, // 奖品数量
-                    name: "6.66", // 奖品名称
+                    name: "1.28", // 奖品名称
                     isPrize: 1 // 该奖项是否为奖品
                 },
                 {
                     // icon: require("../../assets/images/img/bean_five.png"),
                     count: 5,
-                    name: "100",
+                    name: "88.88",
                     isPrize: 1
                 }
             ], //奖品列表
