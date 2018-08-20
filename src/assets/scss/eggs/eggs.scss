@@ -1,0 +1,70 @@
+.egg-details {
+    height: 12rem;
+}
+.egg-details-order {
+    box-sizing: border-box;
+    line-height: 4.5rem;
+    border-top: 0.5px solid rgba(239, 239, 239, 1);
+    border-bottom: 0.5px solid rgba(239, 239, 239, 1);
+}
+.egg-details-order span {
+        box-sizing: border-box;
+        line-height: 4.5rem;
+}
+.egg-pay-info {
+    padding-top: 1.5rem;
+    
+}
+.egg-pay-info li {
+    margin-bottom: 1.45rem;
+}
+.egg-pay-info li >span:nth-of-type(1) {
+    width: 8.05rem;
+    text-align: left;
+   
+}
+.egg-pay-info li:nth-of-type(2) span {
+    align-self :flex-start;
+}
+.egg-lis-top {
+    box-sizing: border-box;
+    height: 5.15rem;
+}
+.egg-list-div {
+}
+.egg-list-li {
+    box-sizing: border-box;
+    height: 7.05rem;
+    padding: 0 1rem;
+    margin-bottom: 1px;
+
+}
+.egg-bottom-more {
+    box-sizing: border-box;
+    height: 7rem;
+    text-align: center;
+    
+}
+.egg-bottom-more p {
+    line-height: 5.5rem;
+    color: rgba(2, 175, 103, 1);
+    
+}
+.egg-bottom-more img  {
+    width: 3.4rem;
+    height: 2.7rem;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.egg-pay-zero  {
+    padding-top: 22% ;
+
+}
+.egg-pay-zero img {
+    width: 11.65rem;
+    height: 15.7rem;
+    margin-bottom: 2rem;
+}
+

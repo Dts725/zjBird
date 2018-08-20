@@ -1,0 +1,64 @@
+.wechat-lottery-container{
+  background-color: #FF4126;
+  padding-bottom: 2.9rem;
+}
+.get-money{
+  color: #4C180D;
+  font-size: 2.5rem;
+  top:50%;left: 50%;
+  transform: translateX(-50%);
+}
+.also-join{
+  line-height: 5.5rem;
+  border-radius: 0.6rem;
+  letter-spacing: 1px;
+}
+.lottery-wrap{
+
+  margin-top: 3.5rem;
+}
+.lottery-box{
+  background-color: #F99A88;
+  border-radius: 0.6rem;
+  padding: 1.6rem 1.5rem;
+
+  .line{
+    width: 30%;
+    height: 1px;
+    border-bottom: 1px solid #fff;
+  }
+}
+.intr-text{
+  margin-top: 1.3rem;
+  line-height: 1.8rem;
+  text-align: justify;
+}
+.scroll-lottery-box{
+  height: 9rem;
+}
+.scroll-lottery{
+  li{
+    height: 3rem;
+    //background-color: #ff80cc;
+    .one{
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+//写滚动的
+
+//@keyframes dd {
+//  0%{
+//    transform: translateY(0rem);
+//  }
+//  100%{
+//    transform: translateY(-15rem);
+//  }
+//}
+//.scroll-list{
+//  animation: dd 50s linear infinite normal;
+//  animation-fill-mode: forwards;
+//}
+//@keyframes dd { 0%{transform: translateY(0rem);} 100%{transform: translateY(-15rem);} }

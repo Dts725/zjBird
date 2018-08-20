@@ -1,0 +1,97 @@
+.record-body {
+  background: linear-gradient(rgba(246, 184, 62, 1), rgba(255, 226, 170, 1));
+  overflow: hidden;
+}
+
+.invite-info-parent {
+  position: relative;
+  top:-2.7rem;
+  left: 0;
+  z-index: 2;
+}
+
+.invite-info {
+  box-sizing: border-box;
+  height: 4.85rem;
+  padding: 0 2.25rem;
+  li {
+    box-sizing: border-box;
+    height: 4.85rem;
+    width: 9.5rem;
+    border-radius: 5px;
+    line-height: 100%;
+    box-shadow: 0rem 0.4rem 2rem rgba(255, 229, 182, 1);
+    padding: 0.75rem 0 0.75rem 1.25rem;
+    div>img {
+      height: 1.25rem;
+    }
+  }
+}
+
+.invite-info-color {
+  color: rgba(194, 133, 79, 1);
+}
+
+.lin35 {
+  line-height: 3.5rem;
+}
+
+.record-count-info {
+  box-sizing: border-box;
+  position: relative;
+  top: -4.8rem;
+  left: 0;
+  background-color: rgba(255, 249, 238, 1);
+  margin: 0rem 0.8rem 0;
+  border-radius: 0.5rem;
+  padding-top: 4rem;
+  z-index:0;
+}
+
+.recored-count-padding {
+  box-sizing: border-box;
+  height: 5.5rem;
+  padding: 1.15rem 0px;
+}
+.recored-count-padding-img {
+    box-sizing: border-box;
+    height: 5.5rem;
+    padding: 1rem 1rem 1rem 0.5rem ;
+}
+
+.li-border-bottom {
+position: absolute;
+bottom: 0;
+left: 0;
+  height: 1px;
+  padding: 0 1rem 0 0.5rem;
+  background-color: rgba(203, 191, 180, 1);
+  background-clip: content-box;
+}
+
+.border-radius-100 {
+  border-radius: 500px;
+}
+
+
+.record-bottom {
+  height: 4.5rem;
+  background: linear-gradient(rgba(255, 209, 2, 1), rgba(255, 168, 0, 1));
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.record-scroll {
+  height: 100px;
+  padding-bottom: 24px; 
+  overflow: auto;
+}
+
+.prize-active {
+  padding: 0px 5px;
+  background-size: 12%;
+  position: absolute; // top: -5px;
+  right: 18px;
+  transform: translateY(-4.4rem)
+}

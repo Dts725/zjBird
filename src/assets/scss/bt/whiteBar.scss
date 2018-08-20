@@ -1,0 +1,126 @@
+.bt-container{
+  .img-box{
+    img{
+      width: 100%;
+    }
+  }
+}
+.bt-list-header{
+  padding: 2rem 1rem;
+}
+.worker-bt-info{
+position: absolute;
+top: 50%;
+left: 1.5rem;
+transform: translateY(-50%)
+}
+.worker-info{
+  @extend .flex;
+  .img-box{
+    width: 4.5rem;
+    @extend .mr3;
+    img{
+      border-radius: 50%;
+    }
+  }
+}
+.worker-name{
+  .img-box{
+    width: 2rem;
+  }
+}
+
+.bt-list-main-header{
+  //导航栏的选中和默认颜色
+  .border-bottom-default{
+    border-bottom: 0.5px solid $line;
+  }
+  .border-bottom-orange{
+    border-bottom: 2px solid $orange;
+    p{
+      color:$darkOrange;
+    };
+
+  }
+  .bt-list-main-item{
+    line-height:3rem;
+     width: 25%;
+     font-size: 1.4rem;
+     text-align: center;
+
+    .b-r{
+      margin: 0.5rem 0;
+    }
+
+  }
+  .bt-list-main-item:not(:last-child) {
+    .b-r{
+      border-right: 0.5px solid $line;
+    }
+  }
+}
+
+//待结清下三种状态样式
+.stay-close-wrap{
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  font-size: 1.4rem;
+  border-bottom: 0.5px solid $line;
+  .stay-close-item{
+    width:8rem;
+    height: 2.8rem;
+    @extend .flex-ajc;
+    border-radius: 0.3rem;
+  }
+  .stay-close-item-default{
+    background-color: $btngrey;
+    color:#fff;
+  }
+  .stay-close-item-on{
+    background-color: $orange;
+    color:#333;
+  }
+}
+
+//具体的列表信息
+//.bt-list-info-wrap{
+// margin-bottom: 4.5rem;
+//}
+.bt-list-info-item{
+  padding:1.5rem 1rem;
+
+  .img-box{
+    width: 3rem;
+  }
+}
+.bt-list-info-item:not(:last-child){
+  @extend .border-b;
+}
+//我要还款按钮
+.btn-bt{
+  line-height: 4.5rem;
+  background-color: $orange;
+  text-align: center;
+}
+.btn-on{
+  line-height: 4.5rem;
+  background-color: $orange;
+  text-align: center;
+}
+.btn-off{
+  line-height: 4.5rem;
+  background-color: $btngrey;
+  text-align: center;
+  pointer-events: none;
+}
+//
+.main-content{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0; /*距离底部的距离为底部盒子的高度，自己也可以设置*/
+  overflow-y: scroll;
+  width: 100%;
+  height: auto;
+  -webkit-overflow-scrolling: touch;   /*这句是为了滑动更顺畅*/
+}

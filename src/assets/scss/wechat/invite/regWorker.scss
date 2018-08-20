@@ -1,0 +1,112 @@
+.wechat-invite-container{
+  background-color: #f55639;
+  padding-bottom: 3.4rem;
+  .keyboard{
+    transition: margin-top 0.4s;
+    -moz-transition: margin-top 0.4s;
+    -webkit-transition:margin-top 0.4s;
+  }
+}
+.wechat-dialog-wrap{
+  padding: 0 2.5rem;
+  margin-top: 1.5rem;
+}
+.show-phone-box{
+  .text{
+    width: 98%;
+    margin-left: 2%;
+    background-color: #F99A88;
+    color: #fff;
+    border-radius: 0.5rem;
+    position: relative;
+    padding: 0.85rem 1rem 1.05rem;
+    text-align: justify;
+    line-height: 1.5rem;
+  }
+  .text:before{
+    position: absolute;
+    content: "";
+    right: 100%;
+    top: 0.8rem;
+    width: 0;
+    height: 0;
+    border-top: 0.4rem solid transparent;
+    border-right: 0.6rem solid #F99A88;
+    border-bottom: 0.4rem solid transparent;
+    border-left: 0.4rem solid transparent;
+  }
+}
+
+.register-worker{
+  background-color: #F99A88;
+  border-radius: 0.3rem;
+  margin-top: 1.5rem;
+}
+.register-box{
+  padding: 3rem 1.35rem;
+  input{
+    border: none;
+    @extend .fz18;
+  }
+  input::-webkit-input-placeholder{
+    line-height: normal;
+  }
+  input:-ms-input-placeholder{
+    line-height: normal;
+  }
+  .form-group{
+    //height: 4rem;
+    padding: 0.8rem  1rem;
+    background-color: #fff;
+    border-radius: 0.15rem;
+    .close-phone{
+      //color:#fff;
+      //background-color: #ccc;
+      width: 1.5rem;
+      height: 1.5rem;
+      //line-height: 1.5rem;
+      //border-radius: 50%;
+    }
+  ;
+  }
+}
+.btn-invite{
+  line-height: 4rem;
+  border-radius: 0.15rem;
+}
+.btn-invite-orange{
+  background-color: $orange;
+  color: #333;
+}
+.btn-invite-default{
+  background-color: #bbb;
+  color: #fff;
+  pointer-events: none;
+}
+
+.reg-succ-box{
+  background-color: #F99A88;
+}
+.reg-succ-content{
+  padding: 2rem 1.5rem;
+}
+.dotted-line{
+  height: 1px;
+  border-bottom:1px dashed #E6E6E6;
+  width: 94%;
+}
+.download-app{
+  line-height: 4rem;
+  margin-top: 3rem;
+  border-radius: 0.15rem;
+}
+.wechat-btn-invite{
+  box-shadow: 0 0.4rem 0 #FFAF02;
+  font-weight: bold;
+  color:#4C180D;
+  background-color: $orange;
+}
+.cb-off{
+  @extend .cb;
+  pointer-events: none;
+}

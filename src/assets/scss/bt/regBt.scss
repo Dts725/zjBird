@@ -1,0 +1,120 @@
+.idNum{
+  border: none;
+}
+.tips-title{
+  padding: 1.5rem 1rem;
+}
+.id-example{
+  width: 23%;
+}
+.id-content{
+  width: 60%;
+  overflow: hidden;
+}
+
+.bg_picWrapper{
+  width:100%;
+  height:0;
+  padding-bottom: 66.7%;
+  overflow:hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  background-size:cover;
+}
+
+.checkbox {
+  position: relative;
+  //height: 3rem;
+  margin-left: 0;
+  margin-bottom: 8rem;
+  text-align: center;
+}
+.checkbox input[type='checkbox'] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  opacity: 0;
+}
+.checkbox label {
+    position: absolute;
+    left: 23%;
+    top: 1.1px;
+    height: 1.5rem;
+    line-height: 1.5rem;
+
+
+  }
+.checkbox label:before {
+  content: '';
+  position: absolute;
+  left: -2.3rem;
+  top: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #cecece;
+  border-radius: 0.2rem;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+}
+.checkbox label:after {
+  content: '';
+  position: absolute;
+  left: -1.8rem;
+  top: 0;
+  width: 0.4rem;
+  height: 1rem;
+  border: 0;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  //background: #fff;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease; }
+.checkbox input[type='checkbox']:checked + label:before {
+  background:$darkOrange;
+  border-color: $darkOrange;
+}
+.checkbox input[type='checkbox']:checked + label:after {
+  background: $darkOrange;
+}
+
+//按钮不可点击
+.btn-bt-default{
+  background-color: $btngrey;
+  pointer-events: none;
+}
+.btn-bt-orange{
+  background-color: $orange;
+}
+/*开通工友白条的样式*/
+.name-input{
+  border: none;
+  width: 66%;
+}
+
+
+/*开通工友白条信息*/
+//.kt-box{
+//  padding-top: 3rem;
+//}
+.worker-img{
+  width: 5rem;
+  border-radius: 50%;
+}
+
+[v-cloak] {
+  display: none !important;
+}
+.tips-color {
+  color: #ffffff;
+}

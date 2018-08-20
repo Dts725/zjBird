@@ -1,0 +1,28 @@
+.payback-list-item{
+  width: 33.33%;
+  line-height:3rem;
+  font-size: 1.5rem;
+  text-align: center;
+  .b-r{
+    margin: 0.5rem 0;
+  }
+}
+.payback-list-item:not(:last-child) {
+  .b-r{
+    border-right: 1px solid $line;
+  }
+}
+
+.check-payback-list{
+  margin-top: 0.1rem;
+  .check-payback-item{
+    @extend .pa3;
+  }
+  .check-payback-item:not(:last-child){
+    @extend .border-b;
+  }
+}
+
+.payback-detail-item{
+  padding: 1.5rem 0;
+}

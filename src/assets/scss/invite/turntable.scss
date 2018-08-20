@@ -1,0 +1,75 @@
+.prize-list-show-parent {
+    height: 14.25rem;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-width: 3.9rem  1.5rem 1.25rem;
+    border-style:solid;
+    border-color: #FFF9EE;
+    overflow: auto;
+    ul li {
+      padding: 5px;
+    color: rgba(118, 74, 35, 1);
+    }
+ 
+  }
+
+  .prize-warp {
+    // background-color: rgba(255, 207, 108, 1);
+    padding: 0 3.25rem 1.25rem;
+  }
+  .prize-list-show {
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 1.5rem 0 1.45rem;
+    margin-top: 1.05rem;
+    overflow: auto;
+
+  }
+    .prize-list-show  li {
+      line-height: 15px;
+    }
+  @keyframes prize-animation {
+ 0%{
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-60px)
+    }
+    100% {
+      transform: translateY(-120px);
+    }
+  }
+  .lottery_ticket {
+
+    display: inline;
+    font-size: 1.5rem;
+    background-color: #F35300;
+    padding: 0.675rem 1.05rem;
+    border-radius: 100px;
+    text-align: center;
+  }
+  .prize-content-title {
+    position: absolute;
+    top: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #C2854F;
+    font-size: 1.5rem;
+    z-index: 2;
+  }
+  .star-img {
+    position: absolute;
+    top: 1.25rem;
+    left: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 12rem;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+  .star-img  >img {
+    height: 1.5rem;
+  }
+
+

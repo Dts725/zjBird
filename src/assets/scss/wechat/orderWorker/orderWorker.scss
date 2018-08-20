@@ -1,0 +1,43 @@
+.order-main-box{
+  .needs{
+    resize: none;
+    @extend .w100;
+    //background-color: #9eebcf;
+    height: 4.2rem;
+    border: none;
+    padding: 0;
+  }
+}
+//全部评价
+.worker-comment-box{
+  .manyComments{
+    @extend .flex;
+    justify-content: space-between;
+  }
+}
+//图片样式
+.fix-img-wrap{
+  display: flex;
+  flex-direction: row;
+  width:100%;
+  flex-wrap: wrap;
+  //justify-content: flex-start;
+  margin: 0.5rem 0;
+  .fix-img-item{
+    width: 32%;
+    margin: 0.3rem 2% 0.3rem 0;
+    height:0;
+    padding-bottom:32%;
+    position:relative;
+    overflow: hidden;
+  }
+  .fix-img-item:nth-child(3n){
+    margin-right: 0;
+  }
+  img{
+    position: absolute;
+    max-width: none;
+  }
+}
+
+
