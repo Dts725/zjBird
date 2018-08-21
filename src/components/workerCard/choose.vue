@@ -49,7 +49,7 @@ export default {
             axios({
                 methods: "get",
                 url:
-                    "https://frontend2.oss-cn-hangzhou.aliyuncs.com/h5test/8899Wed%20Jul%2004%202018%2010%3A16%3A08%20GMT%2B0800%20%28%E4%B8%AD%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4%29.jpg"
+                    "https://frontend2.oss-cn-hangzhou.aliyuncs.com/h5test/8609Tue%20Aug%2021%202018%2010%3A37%3A50%20GMT%2B0800%20%28%E4%B8%AD%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4%29.jpg"
             })
                 .then(res => {
                     this.imgList = res.data;

@@ -27,11 +27,11 @@ aliOss.fileChange = function (el, vueDataList) {
     }
   })
 };
-//转换base64 
+//转换base64
 aliOss.compress = function (fileObj, vueData) {
   if (typeof (FileReader) === 'undefined') {
     console.log("当前浏览器内核不支持base64图标压缩");
-    //调用上传方式不压缩  
+    //调用上传方式不压缩
     vueData.push(fileObj);
     // uploadFile(name,fileObj);
   } else {
@@ -49,16 +49,15 @@ aliOss.compress = function (fileObj, vueData) {
         // console.log(height)
         canvas.height = height;
         let context = canvas.getContext('2d');
-        //压缩完成执行回调  
+        //压缩完成执行回调
         context.drawImage(Img, 0, 0, width, height);
         let data = canvas.toDataURL('image/jpeg', 0.7);
-        console.log(data);
         vueData.push(data);
       }
     } catch (e) {
       console.log("压缩失败!");
       vueData.push(fileObj);
-      //调用直接上传方式  不压缩 
+      //调用直接上传方式  不压缩
       // uploadFile(name,fileObj);
     }
   }
@@ -77,7 +76,7 @@ aliOss.uploadFile = function (name, vueDataList, aliOssResult = 'moren') {
       });
 
       co(function* () {
-        let tims = new Date();
+        let tims = new Date().getTime();
         let data = JSON.stringify(vueDataList);
         let result = yield client.put(name + tims + '.jpg', new Buffer(data));
 
@@ -105,7 +104,7 @@ aliOss.deletefile = function (name) {
     let result = yield client.deleteMulti(name, {
       quite: true
     });
-    console.log(result);
+
   }).catch(function (err) {
     console.log(err);
   });
