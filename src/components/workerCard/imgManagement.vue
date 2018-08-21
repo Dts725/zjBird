@@ -2,7 +2,7 @@
     <div class="imgManagement w100">
         <ul class="flex-start-warp w100" >
             <li class="relative">
-                <input type="file" @change="fileChange($event,imgList)" accept="image/*" multiple> 
+                <input type="file" @change="fileChange($event,imgList)" accept="image/*" multiple>
                 <img id="mange" src="../../assets/images/wechat/workerCars/选择案例图片@2x.png" alt="">
             </li>
             <li class="flex-ajc relative" v-for="(item,index) in imgList" :key="index">
@@ -54,14 +54,12 @@ export default {
     methods : {
         //点击按钮删除图片
         deleteImg ($index) {
-            console.log($index)
-            this.imgList.splice($index,1); 
+            this.imgList.splice($index,1);
         },
 
         //点击添加图片
         fileChange (el,imgList) {
             aliOss.fileChange(el,imgList).then(res => {
-                console.log(res);
             });
         },
         callback() {
@@ -69,14 +67,13 @@ export default {
         },
         //点击上传图片
         uploadFile (name,list,callback) {
-           
+
                 aliOss.uploadFile(name,list,callback).then(res=> {
-                console.log(res)
             })
-    
+
         }
     }
-    
+
 }
 </script>
 <style scoped>
