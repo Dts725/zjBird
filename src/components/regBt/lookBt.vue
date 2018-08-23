@@ -114,16 +114,18 @@
     method.lookBt = function () {
     // console.log(store.vm.$store.state.INFO_FN.INFO.name);
     core.$app("get_user_info","info").then((res) => {
-      res =JSON.parse(res).avator;
-      store.userImg = res;
+      let data  =JSON.parse(res).avator;
+      store.userImg = data;
     });
 
     api.lookBt({workerID:store.workerID}).then(function (res) {
         let data =JSON.stringify(res);
            data = JSON.parse(data);
           //  console.log(data);
-        if(data.code === 200)
+        if(data.code === 200) {
+
           store.lists = data.result;
+        }
 
     })
   };

@@ -197,4 +197,16 @@ api.pushLog = function (params) {
 };
 /* ** end ** */
 
+
+
+// 本地测试
+
+api.uploadAliOss = function (params) {
+  return http ('post','/zj/uploadAliOss', params,'locallhost')
+}
+
+
+api.getAliOss = function (params) {
+  return http ('post','/zj/getAliOss', params,'locallhost')
+}
 export default api;

@@ -54,7 +54,7 @@
           <p class="fz14 fw6">获得<span style="color:#e34320" class="fz17 fw6">{{money}}</span>现金红包,请到小金库查看</p>
         </div>
         <div class="toast-btn fz16">
-          <div class="toast-cancel fw5"  @click="share()">炫耀一下</div>
+          <div class="toast-cancel fw5 fz20"  @click="share()">炫耀一下</div>
         </div>
       </div>
     </div>
@@ -76,7 +76,7 @@
                     即可获得抽奖机会！</p>
         </div>
         <div class="toast-btn fz16">
-          <div class="toast-cancel fw5"  @click="inviteShare()">邀请好友</div>
+          <div class="toast-cancel fw5 fz20"  @click="inviteShare()">邀请好友</div>
         </div>
       </div>
     </div>
@@ -263,9 +263,9 @@ export default {
         shareIcon: "http://dist.zjbird.com/icon/red_packet.png"
       };
       console.log(data);
-        core.$app("user_share", data).then(res => {
-          console.log('949234229429349')
-
+      core.$app("user_share", data).then(res => {
+        console.log("949234229429349");
+        this.inviteFriend = 0;
       });
     },
 
@@ -284,6 +284,7 @@ export default {
 
     //微信分享
     share() {
+      this.turnFlag = 0;
       this.toastControlWchart = false;
       this.toast_control = false;
       let data = {
@@ -342,7 +343,14 @@ export default {
     //点击抽奖
     rotating(index) {
       Indicator.close();
-      this.workerID.page = 1;
+      if (this.turnFlag) {
+        Toast("请稍等在点击就抽奖...");
+        return false;
+      }
+
+          this.turnFlag = 1;
+
+
       // 获取抽奖次数
       api.doLuckyDraw(this.workerID).then(res => {
         this.lotteryCount();
@@ -351,8 +359,12 @@ export default {
           Indicator.close();
           if (res.msg === "您的抽奖次数已用完") {
             this.inviteFriend = 1;
+            this.turnFlag = 0;
+
           } else {
             this.closes = Toast(res.msg);
+            this.turnFlag = 0;
+
           }
         }
 
@@ -366,14 +378,14 @@ export default {
           }
         });
 
-        if (!this.click_flag) return;
+        // if (!this.click_flag) return;
         var type = 0; // 默认为 0  转盘转动 1 箭头和转盘都转动(暂且遗留)
         var during_time = 5; // 默认为1s
         // var random = Math.floor(Math.random() * 7);
         var result_index = index || random; // 最终要旋转到哪一块，对应prize_list的下标
         var result_angle = [60, 120, 180, 240, 300, 360]; //最终会旋转到下标的位置所需要的度数
         var rand_circle = 6; // 附加多转几圈，2-3
-        this.click_flag = false; // 旋转结束前，不允许再次触发
+        // this.click_flag = false; // 旋转结束前，不允许再次触发
         if (type == 0) {
           // 转动盘子
           var rotate_angle =
@@ -388,11 +400,10 @@ export default {
           // this.start_rotating_degree_pointer =360*rand_circle;
           var that = this;
           // 旋转结束后，允许再次触发
-          if (this.turnFlag) {
-            Toast("请稍等在点击就抽奖...");
-            return false;
-          }
-          this.turnFlag = 1;
+          // if (this.turnFlag) {
+          //   Toast("请稍等在点击就抽奖...");
+          //   return false;
+          // }
           setTimeout(function() {
             that.click_flag = true;
             that.game_over(this.i);
@@ -415,6 +426,7 @@ export default {
 
     //关闭弹窗
     close_toast() {
+        this.turnFlag = 0;
       this.flagCode = 0;
       this.toastControlWchart = false;
       this.toast_control = false;
@@ -432,7 +444,7 @@ export default {
 </script>
 <style scoped lang="scss">
 .container {
-  // background: url("../../../static/img/draw_btn.png") no-repeat;
+  background: url("../../../static/img/oldNew2.png") no-repeat;
   background-size: 100%;
   background-color: #ffde9a;
   width: 100%;
@@ -440,8 +452,7 @@ export default {
 .lucky-wheel {
   padding-top: 4rem;
 }
-.lucky-title {
-}
+
 .wheel-main {
   display: flex;
   align-items: center;
@@ -627,8 +638,8 @@ export default {
   height: 100%;
 }
 .toast-picture {
-  width: 14.3rem;
-  height: 4.1rem;
+  width: 16.1rem;
+  height: 3.95rem;
   position: absolute;
   top: -2rem;
   left: 50%;

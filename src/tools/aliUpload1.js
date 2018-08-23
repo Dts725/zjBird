@@ -1,20 +1,16 @@
 import OSS from 'ali-oss'
-import {
-  Indicator
-} from 'mint-ui';
-
+import co from 'co'
+import { Indicator } from 'mint-ui';
 let aliOss = {};
 aliOss.fileChange = function (el, vueDataList) {
   //判断是否选中图片
-  let fileList;
-  let fileArray = [];
-  return new Promise((resolve) => {
+  return new Promise ((resolve)=>{
     try {
       if (!el.target.files[0].size) {
         return
       }
-      new Promise((resolve) => {
-        fileList = el.target.files
+    new Promise((resolve) => {
+        let fileList = el.target.files
         resolve(fileList);
       }).then((resolve) => {
         for (var i = 0; i < resolve.length; i++) {
@@ -25,17 +21,12 @@ aliOss.fileChange = function (el, vueDataList) {
           }
         }
       });
-
-      for (let i = 0;i<fileList.length  ;i++) {
-        fileArray.push(fileList[i]);
-      }
-      resolve(fileArray);
+      resolve("读取图片成功了")
     } catch (err) {
       console.log(err);
     }
   })
 };
-
 //转换base64
 aliOss.compress = function (fileObj, vueData) {
   if (typeof (FileReader) === 'undefined') {
@@ -72,47 +63,51 @@ aliOss.compress = function (fileObj, vueData) {
   }
 };
 
+//上传文件到aliOss
 aliOss.uploadFile = function (name, vueDataList, aliOssResult = 'moren') {
-
-  function date() {
-    let tims = new Date().getTime();
-    let nums1 = Math.random() * 10;
-    let nums2 = Math.random() * 10;
-    let nums3 = Math.random() * 10;
-
-    return tims + nums1 + nums2 + nums3
-  }
-
   Indicator.open('上传中 请稍等...');
-  return new Promise(function (resolve) {
-    let client = new OSS({
-      endpoint: 'oss-cn-hangzhou.aliyuncs.com',
-      region: 'frontend2.oss-cn-hangzhou.aliyuncs.com',
-      accessKeyId: 'LTAIr7Wg5qXL2crB',
-      accessKeySecret: 'PchxY1WBvD5QPiG9Nfj0svWOnCWpEy',
-      bucket: 'frontend2'
-    });
+  return   new Promise(function (resolve) {
+      let client = new OSS.Wrapper({
+        endpoint: 'oss-cn-hangzhou.aliyuncs.com',
+        region: 'frontend2.oss-cn-hangzhou.aliyuncs.com',
+        accessKeyId: 'LTAIr7Wg5qXL2crB',
+        accessKeySecret: 'PchxY1WBvD5QPiG9Nfj0svWOnCWpEy',
+        bucket: 'frontend2'
+      });
 
-    async function input() {
-      try {
-        let result = [];
-        for (let i = 0; i < vueDataList.length; i++) {
-          let tims = date();
-          let data = await client.put(name + tims + vueDataList[i].name, vueDataList[i]);
-          result.push(data);
+      co(function* () {
+        let tims = new Date().getTime();
+        let data = JSON.stringify(vueDataList);
+        let result = yield client.put(name + tims + '.jpg', new Buffer(data));
+
+        if (typeof (aliOssResult) == 'function') {
+          aliOssResult(result);
         }
         Indicator.close();
         resolve(result);
-      } catch (e) {
-        console.log(e);
-      }
-    }
-
-    input();
-
-
-  });
+        // console.log(result)
+      })
+    });
 };
 
+//删除文件待用
+//name : array
+aliOss.deletefile = function (name) {
+  let client = new OSS.Wrapper({
+    endpoint: 'oss-cn-hangzhou.aliyuncs.com',
+    region: 'frontend2.oss-cn-hangzhou.aliyuncs.com',
+    accessKeyId: 'LTAIr7Wg5qXL2crB',
+    accessKeySecret: 'PchxY1WBvD5QPiG9Nfj0svWOnCWpEy',
+    bucket: 'frontend2'
+  });
+  co(function* () {
+    let result = yield client.deleteMulti(name, {
+      quite: true
+    });
 
-export default aliOss;
+  }).catch(function (err) {
+    console.log(err);
+  });
+
+};
+export default aliOss

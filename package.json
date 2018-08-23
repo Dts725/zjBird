@@ -11,7 +11,7 @@
     "mock": "puer -a mock/server.js"
   },
   "dependencies": {
-    "ali-oss": "^5.3.1",
+    "ali-oss": "^6.0.1",
     "cube-ui": "^1.10.0",
     "jquery": "^2.2.4",
     "md5": "^2.2.1",
