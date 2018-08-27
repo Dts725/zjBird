@@ -4,72 +4,63 @@ import Router from 'vue-router'
 import test from '@/components/test'
 import test2 from '@/components/test2'
 import test3 from '@/components/test3'
-import verifyPhone from '@/components/common/verifyPhone'
-import whiteBar from '@/components/BT/whiteBar'
-import checkWhiteDetail from '@/components/BT/checkWhiteDetail'
-import payBackList from '@/components/BT/payBackList'
-import payBackDetail from '@/components/BT/payBackDetail'
-import checkPayBackList from '@/components/BT/checkPayBackList'
-import argremment from "@/components/BT/argremment"
-import registerBt from '@/components/regBt/registerBt'
-import openNotes from '@/components/regBt/openNotes'
-import lookBt from '@/components/regBt/lookBt'
-import redInstructions from '@/components/agreements/redInstructions'
+// import whiteBar from '@/components/BT/whiteBar'
+// import checkWhiteDetail from '@/components/BT/checkWhiteDetail'
+// import payBackList from '@/components/BT/payBackList'
+// import payBackDetail from '@/components/BT/payBackDetail'
+// import checkPayBackList from '@/components/BT/checkPayBackList'
+// import argremment from "@/components/BT/argremment"
+// import registerBt from '@/components/regBt/registerBt'
+// import openNotes from '@/components/regBt/openNotes'
+// import lookBt from '@/components/regBt/lookBt'
+// import redInstructions from '@/components/agreements/redInstructions'
 
-import turntable from '@/components/invite/turntable'
-import regRecord from '@/components/invite/regRecord'
-import activeDes from "../components/invite/activeDes"
-import lottery from '@/components/wechat/invite/lottery'
-import regWorker from '@/components/wechat/invite/regWorker'
-import invite from '@/components/invite/invite'
-import workerDetail from '@/components/workerCard/workerDetail'
+// import turntable from '@/components/invite/turntable'
+// import regRecord from '@/components/invite/regRecord'
+// import activeDes from "@/components/invite/activeDes"
+// import lottery from '@/components/wechat/invite/lottery'
+// import regWorker from '@/components/wechat/invite/regWorker'
+// import invite from '@/components/invite/invite'
+// import workerDetail from '@/components/workerCard/workerDetail'
 
-import orderDetail from '@/components/wechat/orderWorker/orderDetail'
-import manyComments from '@/components/wechat/orderWorker/manyComments'
-import manyImgs from '@/components/wechat/orderWorker/manyImgs'
-import orderSuccess from '@/components/wechat/orderWorker/orderSuccess'
+// import orderDetail from '@/components/wechat/orderWorker/orderDetail'
+// import manyComments from '@/components/wechat/orderWorker/manyComments'
+// import manyImgs from '@/components/wechat/orderWorker/manyImgs'
 
-import imgManagement from '@/components/workerCard/imgManagement'
-import choose from '@/components/workerCard/choose'
-import evaluate from '@/components/workerCard/evaluate'
-import evaluateChoose from '@/components/workerCard/evaluateChoose'
+// import imgManagement from '@/components/workerCard/imgManagement'
+// import choose from '@/components/workerCard/choose'
+// import evaluate from '@/components/workerCard/evaluate'
+// import evaluateChoose from '@/components/workerCard/evaluateChoose'
 //eggs
-import eggs from '@/components/eggs/eggs'
-import eggsPayOut from '../components/eggs/eggsPayOut'
-import eggsPayDetails from '../components/eggs/eggsPayDetails'
-import eggsDescription from '../components/agreements/eggsDescription'
+// import eggs from '@/components/eggs/eggs'
+// import eggsPayOut from '../components/eggs/eggsPayOut'
+// import eggsPayDetails from '../components/eggs/eggsPayDetails'
 
-import paySetting from '../components/paySetting/paySetting'
-import payPassword from '../components/paySetting/payPassword'
-import verifyPay from '../components/paySetting/verifyPay'
+// import paySetting from '../components/paySetting/paySetting'
+// import payPassword from '../components/paySetting/payPassword'
+// import verifyPay from '../components/paySetting/verifyPay'
 
 
 
 
 Vue.use(Router)
 
-export default new Router({
 
-  routes: [
-    {
+
+ const routes = [{
       path: '/eggsPayOut',
       name: 'eggsPayOut',
-      component: eggsPayOut
+      component: resolve => require(['@/components/eggs/eggsPayOut'], resolve)
     },
     {
       path: '/eggsPayDetails',
       name: 'eggsPayDetails',
-      component: eggsPayDetails
-    },
-    {
-      path: '/eggsDescription',
-      name: 'eggsDescription',
-      component: eggsDescription
+      component: resolve => require(['../components/eggs/eggsPayDetails'], resolve)
     },
     {
       path: '/eggs',
       name: 'eggs',
-      component: eggs
+      component: resolve => require(['@/components/eggs/eggs'], resolve)
     },
     {
       path: '/test3',
@@ -79,42 +70,42 @@ export default new Router({
     {
       path: '/evaluateChoose',
       name: 'evaluateChoose',
-      component: evaluateChoose
+      component: resolve => require(['@/components/workerCard/evaluateChoose'], resolve)
     },
     {
       path: '/evaluate',
       name: 'evaluteTemplate',
-      component: evaluate
+      component: resolve => require(['@/components/workerCard/evaluate'], resolve)
     },
     {
       path: '/choose',
       name: 'choose',
-      component: choose
+      component: resolve => require(['@/components/workerCard/choose'], resolve)
     },
     {
       path: '/imgManagement',
       name: 'imgManagement',
-      component: imgManagement
+      component: resolve => require(['@/components/workerCard/imgManagement'], resolve)
     },
     {
       path: '/activeDes',
       name: 'activeDes',
-      component: activeDes
+      component: resolve => require(["@/components/invite/activeDes"], resolve)
     },
     {
       path: '/invite',
       name: 'invite',
-      component: invite
+      component: resolve => require(['@/components/invite/invite'], resolve)
     },
     {
       path: '/regRecord',
       name: 'regRecord',
-      component: regRecord
+      component: resolve => require(['@/components/invite/regRecord'], resolve)
     },
     {
       path: '/argremment',
       name: 'argremment',
-      component: argremment
+      component: resolve => require(['@/components/BT/argremment'], resolve)
     },
     {
       path: '/test2',
@@ -129,107 +120,100 @@ export default new Router({
     {
       path: '/whiteBar',
       name: 'whiteBar',
-      component: whiteBar
+      component: resolve => require(['@/components/BT/whiteBar'],resolve)
     },
     {
       path: '/checkWhiteDetail',
       name: 'checkWhiteDetail',
-      component: checkWhiteDetail
+      component: resolve =>(['@/components/BT/checkWhiteDetail'],resolve)
     },
     {
       path: '/payBackList',
       name: 'payBackList',
-      component: payBackList
+      component: resolve => require(['@/components/BT/payBackList'], resolve)
     },
     {
       path: '/payBackDetail',
       name: 'payBackDetail',
-      component: payBackDetail
+      component: resolve => require(['@/components/BT/payBackDetail'], resolve)
+
     },
     {
       path: '/checkPayBackList',
       name: 'checkPayBackList',
-      component: checkPayBackList
+      component: resolve => require(['@/components/BT/checkPayBackList'], resolve)
     },
     {
       path: '/registerBt',
       name: 'registerBt',
-      component: registerBt
+      component: resolve => require(['@/components/regBt/registerBt'], resolve)
     },
     {
       path: '/openNotes',
       name: 'openNotes',
-      component: openNotes
+      component: resolve => require(['@/components/regBt/openNotes'], resolve)
     },
     {
       path: '/lookBt',
       name: 'lookBt',
-      component: lookBt
+      component: resolve => require(['@/components/regBt/lookBt'], resolve)
     },
     {
       path: '/redInstructions',
       name: 'redInstructions',
-      component: redInstructions
+      component: resolve => require(['@/components/agreements/redInstructions'], resolve)
     },
     {
       path: '/turntable',
       name: 'turntable',
-      component: turntable
+      component: resolve => require(['@/components/invite/turntable'], resolve)
     },
     {
       path: '/lottery',
       name: 'lottery',
-      component: lottery
+      component: resolve => require(['@/components/wechat/invite/lottery'], resolve)
     },
     {
       path: '/regWorker',
       name: 'regWorker',
-      component: regWorker
+      component: resolve => require(['@/components/wechat/invite/regWorker'], resolve)
     },
     {
       path: '/workerDetail',
       name: 'workerDetail',
-      component: workerDetail
+      component: resolve => require(['@/components/workerCard/workerDetail'], resolve)
     },
     {
       path: '/orderDetail',
       name: 'orderDetail',
-      component: orderDetail
+      component: resolve => require(['@/components/wechat/orderWorker/orderDetail'], resolve)
     },
     {
       path: '/manyComments',
       name: 'manyComments',
-      component: manyComments
+      component: resolve => require(['@/components/wechat/orderWorker/manyComments'], resolve)
     },
     {
       path: '/manyImgs',
       name: 'manyImgs',
-      component: manyImgs
+      component: resolve => require(['@/components/wechat/orderWorker/manyImgs'], resolve)
+
     },
     {
       path: '/paySetting',
       name: 'paySetting',
-      component: paySetting
+      component: resolve => require(['../components/paySetting/paySetting'], resolve)
     },
     {
       path: '/payPassword',
       name: 'payPassword',
-      component: payPassword
+      component: resolve => require(['../components/paySetting/payPassword'], resolve)
     },
     {
       path: '/verifyPay',
       name: 'verifyPay',
-      component: verifyPay
+      component: resolve => require(['../components/paySetting/verifyPay'], resolve)
     },
-    {
-      path: '/verifyPhone',
-      name: 'verifyPhone',
-      component: verifyPhone
-    },
-    {
-      path: '/orderSuccess',
-      name: 'orderSuccess',
-      component: orderSuccess
-    },
-  ]
-})
+  ];
+const router = new Router(routes);
+export default router
