@@ -3,7 +3,7 @@
 </template>
 <script>
   export default  {
-    name : "answerFrant",
+    name : "answerFive",
     data () {
       return  {
 
@@ -17,7 +17,7 @@
 
     },
     methods : {
-
+      
     }
   }
 </script>

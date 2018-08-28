@@ -3,7 +3,7 @@
 </template>
 <script>
   export default  {
-    name : "answerFrant",
+    name : "vote",
     data () {
       return  {
 

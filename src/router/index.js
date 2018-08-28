@@ -45,6 +45,15 @@ import payPassword from '../components/paySetting/payPassword'
 import verifyPay from '../components/paySetting/verifyPay'
 
 
+//vote
+import voteIndex from "../components/vote/voteIndex"
+import vote from "../components/vote/vote"
+import answer from "../components/vote/answer"
+import answerOne from "../components/vote/answer/answerOne"
+import answerTwo from "../components/vote/answer/answerOne"
+import answerThree from "../components/vote/answer/answerOne"
+import answerFour from "../components/vote/answer/answerOne"
+
 
 
 Vue.use(Router)
@@ -52,6 +61,32 @@ Vue.use(Router)
 export default new Router({
 
   routes: [
+    {
+      path : '/voteIndex',
+      component : "answerFrant",
+      children : [
+        {
+          path : "/answerOne",
+          component : "answerOne",
+          name : answerOne
+        },
+        {
+          path : "/answerTwo",
+          component : "answerTwo",
+          name : answerTwo
+        },
+        {
+          path : "/answerThree",
+          component : "answerThree",
+          name : answerThree
+        },
+        {
+          path : "/answerFour",
+          component : "answerFour",
+          name : answerFour
+        },
+      ]
+    },
     {
       path: '/eggsPayOut',
       name: 'eggsPayOut',
@@ -61,6 +96,16 @@ export default new Router({
       path: '/eggsPayDetails',
       name: 'eggsPayDetails',
       component: eggsPayDetails
+    },
+    {
+      path: '/vote',
+      name: 'vote',
+      component: vote
+    },
+    {
+      path: '/answer',
+      name: 'answer',
+      component: answer
     },
     {
       path: '/eggsDescription',
