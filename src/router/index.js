@@ -46,7 +46,7 @@ import verifyPay from '../components/paySetting/verifyPay'
 
 
 //vote
-import voteIndex from "../components/vote/voteIndex"
+import voteDetail from "../components/vote/voteDetail"
 import vote from "../components/vote/vote"
 import answer from "../components/vote/answer"
 import answerOne from "../components/vote/answer/answerOne"
@@ -88,6 +88,16 @@ export default new Router({
       ]
     },
     {
+      path: '/vote',
+      name: 'vote',
+      component: vote
+    },
+    {
+      path: '/voteDetail',
+      name: 'voteDetail',
+      component: voteDetail
+    },
+    {
       path: '/eggsPayOut',
       name: 'eggsPayOut',
       component: eggsPayOut
@@ -97,11 +107,7 @@ export default new Router({
       name: 'eggsPayDetails',
       component: eggsPayDetails
     },
-    {
-      path: '/vote',
-      name: 'vote',
-      component: vote
-    },
+
     {
       path: '/answer',
       name: 'answer',
