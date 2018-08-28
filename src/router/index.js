@@ -50,9 +50,9 @@ import voteDetail from "../components/vote/voteDetail"
 import vote from "../components/vote/vote"
 import answer from "../components/vote/answer"
 import answerOne from "../components/vote/answer/answerOne"
-import answerTwo from "../components/vote/answer/answerOne"
-import answerThree from "../components/vote/answer/answerOne"
-import answerFour from "../components/vote/answer/answerOne"
+import answerTwo from "../components/vote/answer/answerTwo"
+import answerThree from "../components/vote/answer/answerThree"
+import answerFour from "../components/vote/answer/answerFour"
 
 
 
@@ -61,32 +61,33 @@ Vue.use(Router)
 export default new Router({
 
   routes: [
-    {
-      path : '/voteIndex',
-      component : "answerFrant",
-      children : [
-        {
-          path : "/answerOne",
-          component : "answerOne",
-          name : answerOne
-        },
-        {
-          path : "/answerTwo",
-          component : "answerTwo",
-          name : answerTwo
-        },
-        {
-          path : "/answerThree",
-          component : "answerThree",
-          name : answerThree
-        },
-        {
-          path : "/answerFour",
-          component : "answerFour",
-          name : answerFour
-        },
-      ]
-    },
+    // {
+    //   path : "/answer",
+    //   component : "answer",
+    //   name:"answer",
+    //   children : [
+    //     {
+    //       path : "/answerOne",
+    //       component : "answerOne",
+    //       name : answerOne
+    //     },
+    //     {
+    //       path : "/answerTwo",
+    //       component : "answerTwo",
+    //       name : answerTwo
+    //     },
+    //     {
+    //       path : "/answerThree",
+    //       component : "answerThree",
+    //       name : answerThree
+    //     },
+    //     {
+    //       path : "/answerFour",
+    //       component : "answerFour",
+    //       name : answerFour
+    //     },
+    //   ]
+    // },
     {
       path: '/vote',
       name: 'vote',
